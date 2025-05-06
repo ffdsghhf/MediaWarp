@@ -40,11 +40,11 @@ func (embyServer *EmbyServer) ItemsServiceQueryItem(ids string, limit int, field
 		params       = url.Values{}
 		itemResponse = &EmbyResponse{}
 	)
-	params.Add("Ids", ids)
-	params.Add("Limit", strconv.Itoa(limit))
-	params.Add("Fields", fields)
-	params.Add("Recursive","true")
-	params.Add("api_key", embyServer.GetAPIKey())
+	params.Add(key:"Ids", ids)
+	params.Add(key:"Limit", strconv.Itoa(limit))
+	params.Add(key:"Fields", fields)
+	params.Add(key:"Recursive",value:"true")
+	params.Add(key:"api_key", embyServer.GetAPIKey())
 	api := embyServer.GetEndpoint() + "/Items?" + params.Encode()
 	resp, err := http.Get(api)
 	if err != nil {
