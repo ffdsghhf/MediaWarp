@@ -55,7 +55,7 @@ dockers:
     goarch: amd64
     goamd64: v1
     image_templates:
-      - "anxbr/mediawarp:{{ .Version }}-amd64"
+      - "naxbr/mediawarp:{{ .Version }}-amd64"
 
   - dockerfile: docker/Dockerfile-goreleaser
     use: buildx
@@ -102,13 +102,13 @@ dockers:
       - "naxbr/mediawarp:{{ .Version }}-armv7"
 
 docker_manifests:
-  - name_template: "akimio/mediawarp:latest"
+  - name_template: "naxbr/mediawarp:latest"
     image_templates:
       - "naxbr/mediawarp:{{ .Version }}-amd64"
       - "naxbr/mediawarp:{{ .Version }}-arm64"
       - "naxbr/mediawarp:{{ .Version }}-armv6"
       - "naxbr/mediawarp:{{ .Version }}-armv7"
-  - name_template: "akimio/mediawarp:{{ .Version }}"
+  - name_template: "naxbr/mediawarp:{{ .Version }}"
     image_templates:
       - "naxbr/mediawarp:{{ .Version }}-amd64"
       - "naxbr/mediawarp:{{ .Version }}-arm64"
